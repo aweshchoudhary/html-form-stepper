@@ -50,25 +50,35 @@
   }
   
   /* Make circles that indicate the steps of the form: */
+  .steps{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+  }
   .step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
+    height: 50px;
+    font-size: 20px;
+    width: 50px;
+    margin: 0 5px;
     background-color: #bbbbbb;
     border: none;
     border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   /* Mark the active step: */
   .step.active {
-    opacity: 1;
+    background-color: var(--primary);
+    color: var(--light);
   }
   
   /* Mark the steps that are finished and valid: */
   .step.finish {
-    background-color: var(--primary);
+    background-color: var(--primary-hover);
+    color: var(--light);
   } 
 
   .btn{
@@ -80,6 +90,13 @@
   }
   .btn:hover{
     background: var(--primary-hover);
+  }
+
+  .menu{
+    width: 100%;
+    border: var(--border);
+    padding: 15px;
+    margin: 20px 0;
   }
 
   @media  screen and (max-width:768px) {

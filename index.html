@@ -31,14 +31,23 @@
       <div class="tab">
         Age of Eldest Member
         <p>
-          <input placeholder="Enter Your Age" oninput="this.className = ''" />
+          <select class="menu" id="age-menu">
+            <option selected value="">Select Your Age</option>
+          </select>
+          <!-- <input placeholder="Enter Your Age" oninput="this.className = ''" /> -->
         </p>
       </div>
 
       <div class="tab">
-        Enter Your City:
         <p>
-          <input placeholder="Enter your city" oninput="this.className = ''" />
+          <select id="state-menu" class="menu" onchange="place()">
+            <option selected value="">Select Your State</option>
+          </select>
+        </p>
+        <p>
+          <select id="city-menu" class="menu">
+            <option selected>Select Your City</option>
+          </select>
         </p>
       </div>
 
@@ -54,13 +63,14 @@
       </div>
 
       <!-- Circles which indicates the steps of the form: -->
-      <div style="text-align: center; margin-top: 40px">
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
+      <div class="steps">
+        <span class="step">1</span>
+        <span class="step">2</span>
+        <span class="step">3</span>
+        <span class="step">4</span>
       </div>
     </form>
     <script src="./script.js"></script>
+    <script src="./cities.js"></script>
   </body>
 </html>

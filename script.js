@@ -80,3 +80,15 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+
+const age = () => {
+  const ageInput = document.querySelector("#age-menu");
+  for (let i = 20; i <= 50; i++) {
+    ageInput.insertAdjacentHTML(
+      "beforeend",
+      `<option value="${i}">${i}</option>`
+    );
+  }
+};
+
+age();
