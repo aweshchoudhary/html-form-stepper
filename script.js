@@ -2,6 +2,7 @@ var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
 const REDIRECT_URL = "/"; // add submit redirect url here
+const LAKH5_REDIRECT_URL = "https://www.google.com/"; // add submit redirect url here
 
 function showTab(n) {
   // This function will display the specified tab of the form ...
@@ -17,7 +18,9 @@ function showTab(n) {
     const btn = document.getElementById("nextBtn");
     btn.innerHTML = "Submit";
     btn.onclick = () => {
-      window.location.replace(REDIRECT_URL);
+      const insuranceInput = document.querySelector("#insurance-menu");
+      window.location.href =
+        insuranceInput.value == "5" ? LAKH5_REDIRECT_URL : REDIRECT_URL;
     };
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
@@ -83,7 +86,7 @@ function fixStepIndicator(n) {
 
 const age = () => {
   const ageInput = document.querySelector("#age-menu");
-  for (let i = 20; i <= 50; i++) {
+  for (let i = 20; i <= 60; i++) {
     ageInput.insertAdjacentHTML(
       "beforeend",
       `<option value="${i}">${i}</option>`
