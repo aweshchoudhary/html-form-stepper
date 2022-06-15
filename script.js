@@ -1,9 +1,6 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
-const REDIRECT_URL = "/"; // add submit redirect url here
-const LAKH5_REDIRECT_URL = "https://www.google.com/"; // add submit redirect url here
-
 function showTab(n) {
   // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("tab");
@@ -19,8 +16,17 @@ function showTab(n) {
     btn.innerHTML = "Submit";
     btn.onclick = () => {
       const insuranceInput = document.querySelector("#insurance-menu");
-      window.location.href =
-        insuranceInput.value == "5" ? LAKH5_REDIRECT_URL : REDIRECT_URL;
+      const familyInput = document.querySelector("#sing-family-menu");
+      const host = "https://atlasinsurancebrokers.net";
+      const firt_url =
+        host + (familyInput.value == "single" ? "/1-adult/" : "/fourth/");
+      const second_url =
+        host + familyInput.value == "single" ? "/second/" : "/fifth/";
+      const third_url =
+        host + familyInput.value == "single" ? "/third/" : "/sixth/";
+      if (insuranceInput.value == "5") window.location.href = firt_url;
+      if (insuranceInput.value == "10") window.location.href = second_url;
+      if (insuranceInput.value == "20") window.location.href = third_url;
     };
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
