@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/* Style reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    background: none;
+    transition: all .4s ease;
+}
+:root{
+    --primary:#04AA6D;
+    --primary-hover:#047048;
+    --light: #ffffff;
+    --border: 1px solid #aaaaaa;
+    --error:#ffdddd;
+}
+
+
+/* Style the form */
+ #regForm {
+    background-color: var(--light);
+    margin: 100px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+    border: var(--border);
+  }
+  
+  /* Style the input fields */
+  input {
+    padding: 15px;
+    width: 100%;
+    font-size: 17px;
+    margin: 10px 0;
+    border: var(--border);
+  }
+  
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: var(--error);
+  }
+  
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+    padding: 15px 0;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: var(--primary);
+  } 
+
+  .btn{
+    padding: 10px 30px;
+    font-size: 20px;
+    background: var(--primary);
+    color: var(--light);
+    cursor: pointer;
+  }
+  .btn:hover{
+    background: var(--primary-hover);
+  }
+
+  @media  screen and (max-width:768px) {
+    #regForm{
+      width: 100%;
+      border: none;
+      height: 100%;
+    }
+  }
